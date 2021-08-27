@@ -18,13 +18,13 @@ def check_input(text):
     return True
 
 def input_phrase():
-    phrase = input('Digite uma frase simples: ').upper()
+    phrase = input('Digite uma frase: ').upper()
     while not phrase or not check_input(phrase):
         message = ''
         if not phrase:
-            message = 'DIGITE uma frase simples: '
+            message = 'DIGITE uma frase: '
         elif not check_input(phrase):
-            message = 'Existem caracteres desconhecidos na frase, digite uma frase simples: '
+            message = 'Existem caracteres desconhecidos na frase, digite uma frase: '
         phrase = input(message).upper()
     phrase_len = len(phrase)
     return phrase, phrase_len
@@ -39,7 +39,7 @@ def input_key(phrase_len):
         elif not key:
             message = 'DIGITE a chave: '
         elif not check_input(key):
-            message = 'Existem caracteres desconhecidos na chave, digite uma chave simples: '
+            message = 'Existem caracteres desconhecidos na chave, digite outra chave: '
         key = input(message).upper()
         key_len = len(key)
     key_repetition = math.ceil(phrase_len / key_len)
